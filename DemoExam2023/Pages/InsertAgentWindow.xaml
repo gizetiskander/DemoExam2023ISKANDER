@@ -5,8 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemoExam2023.Pages"
         mc:Ignorable="d"
-        Title="InsertAgentWindow" Height="450" Width="800">
+        Title="InsertAgentWindow" Height="450" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        
+        <Button x:Name="SaveBtn" Content="Сохранить" HorizontalAlignment="Left" Background="#00CC76" FontFamily="Gabriola" Margin="97,281,0,0" FontSize="16" 
+                Foreground="#FFE9F9" VerticalAlignment="Top" Width="114" Click="SaveBtn_Click"/>
+        <Button x:Name="DelBtn" Content="Удалить" HorizontalAlignment="Left" Background="#00CC76" FontSize="16"
+                FontFamily="Gabriola" Margin="237,281,0,0" Foreground="#FFE9F9" VerticalAlignment="Top" Width="114" Click="DelBtn_Click"/>
+        <Button x:Name="ExitBtn" Content="Выйти" HorizontalAlignment="Left" Background="#00CC76" FontSize="16"
+                FontFamily="Gabriola" Margin="161,338,0,0" Foreground="#FFE9F9" VerticalAlignment="Top" Width="114" Click="ExitBtn_Click"/>
+        <TextBox x:Name="NameTB" HorizontalAlignment="Left" Margin="97,72,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="120" FontFamily="Gabriola" FontSize="16"  Background="#00CC76"/>
+        <TextBox x:Name="ArticleTB" HorizontalAlignment="Left" Margin="97,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+                 Width="120" FontFamily="Gabriola" FontSize="16" Background="#00CC76"/>
+        <TextBox x:Name="MinCostTB" HorizontalAlignment="Left" Margin="97,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+                 Width="120" FontFamily="Gabriola" FontSize="16" Background="#00CC76"/>
+        <ComboBox x:Name="ProductTypeCB" HorizontalAlignment="Left" Margin="240,81,0,0" VerticalAlignment="Top" Width="120" 
+                  Height="34" FontFamily="Gabriola" FontSize="16"  Background="#00CC76">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Background="White" Text="{Binding NameType}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="97,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Gabriola" Width="120" FontSize="16" Text="Наименование" />
+        <TextBlock HorizontalAlignment="Left" Margin="97,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Gabriola" FontSize="16"><Run Language="ru-ru" Text="Артикул"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="97,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Gabriola" FontSize="16"><Run Language="ru-ru" Text="Минимальная цена"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="240,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Gabriola" FontSize="16"><Run Text="Тип "/><Run Language="ru-ru" Text="продукта"/></TextBlock>
+        <ComboBox x:Name="MaterialCB" HorizontalAlignment="Left" Margin="240,145,0,0" VerticalAlignment="Top" Width="120" Height="39" FontFamily="Gabriola"  Background="#00CC76">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Background="White" Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="240,125,0,0" TextWrapping="Wrap" FontSize="16" VerticalAlignment="Top" FontFamily="Gabriola"><Run Language="ru-ru" Text="Материалы"/></TextBlock>
+        <TextBox x:Name="CountTB" HorizontalAlignment="Left" Margin="97,217,0,0" FontSize="16" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Gabriola" Background="#00CC76"/>
+        <TextBlock HorizontalAlignment="Left" Margin="97,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontFamily="Gabriola"><Run Text="Кол"/><Run Text="ичество"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="366,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Gabriola" FontSize="16" Text="Логотип"/>
+        <Image x:Name="playim" HorizontalAlignment="Left" Height="91" Margin="366,74,0,0" VerticalAlignment="Top"  Width="100" 
+            RenderTransformOrigin="0.84,0.515" />
+        <Button x:Name="ImgBtn" Content="Добавить фото" HorizontalAlignment="Left" Background="#00CC76" FontSize="16" FontFamily="Gabriola" Margin="366,184,0,0" Foreground="#FFE9F9" 
+            VerticalAlignment="Top" Width="114" Click="ImgBtn_Click"/>
+        <Button x:Name="DelImgBtn" Content="Удалить фото" HorizontalAlignment="Left" Background="#00CC76" FontSize="16" FontFamily="Gabriola" Margin="366,228,0,0" Foreground="#FFE9F9" 
+            VerticalAlignment="Top" Width="114" Click="DelImgBtn_Click"/>
+
     </Grid>
 </Window>

@@ -19,6 +19,8 @@ namespace DemoExam2023.Pages
 
     public partial class AgentListWindow : Window
     {
+        //начал делать, как агентов, потом увидел, что лопушок из-за этого названия приближены к агентам
+
         public static ToiletPaperShop_dbEntities dBEntities = new ToiletPaperShop_dbEntities();
         public AgentListWindow()
         {
@@ -58,7 +60,7 @@ namespace DemoExam2023.Pages
         private void AgentLst_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var insert = AgentLst.SelectedItem as Product;
-            InsertAgentWindow insertAgentWindow = new InsertAgentWindow();
+            InsertAgentWindow insertAgentWindow = new InsertAgentWindow(insert);
             insertAgentWindow.Show();
             this.Close();
         }

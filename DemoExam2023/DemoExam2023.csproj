@@ -127,6 +127,9 @@
     <Compile Include="Pages\AgentListWindow.xaml.cs">
       <DependentUpon>AgentListWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DelWindow.xaml.cs">
+      <DependentUpon>DelWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\InsertAgentWindow.xaml.cs">
       <DependentUpon>InsertAgentWindow.xaml</DependentUpon>
     </Compile>
@@ -169,6 +172,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AgentListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DelWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

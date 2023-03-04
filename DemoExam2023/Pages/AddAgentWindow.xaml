@@ -10,7 +10,7 @@
         <TextBox x:Name="NameTB" HorizontalAlignment="Left" Margin="97,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Gabriola" FontSize="16"  Background="#00CC76"/>
         <TextBox x:Name="ArticleTB" HorizontalAlignment="Left" Margin="97,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Gabriola" FontSize="16" Background="#00CC76"/>
         <TextBox x:Name="MinCostTB" HorizontalAlignment="Left" Margin="97,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Gabriola" FontSize="16" Background="#00CC76"/>
-        <ComboBox x:Name="ProductTypeCB" HorizontalAlignment="Center" Margin="0,81,0,0" VerticalAlignment="Top" Width="120" Height="18" FontFamily="Gabriola" FontSize="16"  Background="#00CC76">
+        <ComboBox x:Name="ProductTypeCB" HorizontalAlignment="Center" Margin="0,81,0,0" VerticalAlignment="Top" Width="120" Height="23" FontFamily="Gabriola" FontSize="16"  Background="#00CC76">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Background="White" Text="{Binding NameType}" />
@@ -32,7 +32,7 @@
                 VerticalAlignment="Top" Width="114" Click="SaveBtn_Click"/>
         <Button x:Name="BackBtn" Content="Выйти" HorizontalAlignment="Left" FontSize="16" Background="#00CC76" FontFamily="Gabriola" Margin="214,320,0,0" Foreground="#FFE9F9" 
                 VerticalAlignment="Top" Width="114" Click="BackBtn_Click"/>
-        <ComboBox x:Name="MaterialCB" HorizontalAlignment="Center" Margin="0,124,0,0" VerticalAlignment="Top" Width="120" Height="18" FontFamily="Gabriola"  Background="#00CC76">
+        <ComboBox x:Name="MaterialCB" HorizontalAlignment="Center" Margin="0,124,0,0" VerticalAlignment="Top" Width="120" Height="28" FontFamily="Gabriola"  Background="#00CC76">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Background="White" Text="{Binding Name}" />
