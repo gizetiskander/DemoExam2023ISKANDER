@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:DemoExam2023.Pages"
         mc:Ignorable="d"
         Title="AgentListWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -35,7 +36,18 @@
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="100" Width="750" >
 
                             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" >
-                                <Image  Height="80" Width="80" Margin="15" x:Name="PictureI" Source="/Res/Logo/picture.png"/>
+                                <Image  Height="80" Width="80" Margin="15" x:Name="PictureI" IsEnabled="True">
+                                    <Image.Style>
+                                        <Style TargetType="{x:Type Image}">
+                                            <Setter Property="Source" Value="{Binding Picture}" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Picture}" Value="{x:Null}">
+                                                    <Setter Property="Source" Value="/Res/Logo/picture.png" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
                             </StackPanel>
 
                             <StackPanel >
