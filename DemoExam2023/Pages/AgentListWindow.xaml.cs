@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DemoExam2023.db;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace DemoExam2023.Pages
 
     public partial class AgentListWindow : Window
     {
+        public static MaterialDBEntities dBEntities = new MaterialDBEntities();
         public AgentListWindow()
         {
             InitializeComponent();
