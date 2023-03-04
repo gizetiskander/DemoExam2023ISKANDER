@@ -7,36 +7,38 @@
         mc:Ignorable="d"
         Title="AddAgentWindow" Height="450" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Margin="14,0,-14,0" RenderTransformOrigin="0.48,0.513">
-        <TextBox x:Name="TitleTB" HorizontalAlignment="Left" Margin="97,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Century Gothic"  Background="#00CC76"/>
-        <TextBox x:Name="PriorityTB" HorizontalAlignment="Left" Margin="97,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Century Gothic" Background="#00CC76"/>
-        <TextBox x:Name="INNTB" HorizontalAlignment="Left" Margin="97,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Century Gothic" Background="#00CC76"/>
-        <TextBox x:Name="KPPTB" HorizontalAlignment="Left" Margin="97,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Century Gothic" Background="#00CC76"/>
-        <TextBox x:Name="DirectoryNameTB" HorizontalAlignment="Left" Margin="237,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Century Gothic" Background="#00CC76"/>
-        <TextBox x:Name="PhoneTB" HorizontalAlignment="Left" Margin="237,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Century Gothic" Background="#00CC76"/>
-        <TextBox x:Name="EmailTB" HorizontalAlignment="Left" Margin="237,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Century Gothic" Background="#00CC76"/>
-        <ComboBox x:Name="AgentTypeCB" HorizontalAlignment="Left" Margin="400,78,0,0" VerticalAlignment="Top" Width="119" Height="18" FontFamily="Century Gothic"  Background="#00CC76">
+        <TextBox x:Name="NameTB" HorizontalAlignment="Left" Margin="97,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Gabriola"  Background="#00CC76"/>
+        <TextBox x:Name="ArticleTB" HorizontalAlignment="Left" Margin="97,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Gabriola" Background="#00CC76"/>
+        <TextBox x:Name="MinCostTB" HorizontalAlignment="Left" Margin="97,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Gabriola" Background="#00CC76"/>
+        <ComboBox x:Name="ProductTypeCB" HorizontalAlignment="Center" Margin="0,81,0,0" VerticalAlignment="Top" Width="120" Height="18" FontFamily="Gabriola"  Background="#00CC76">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Background="White" x:Name="AgentType"  Text="{Binding NameType }" />
+                    <TextBlock Background="White" Text="{Binding NameType}" />
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBlock HorizontalAlignment="Left" Margin="97,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Century Gothic" Width="120" Text="Наименование" />
-        <TextBlock HorizontalAlignment="Left" Margin="97,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Century Gothic" Text="Приоритет"/>
-        <TextBlock HorizontalAlignment="Left" Margin="97,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Century Gothic"  Text="ИНН"/>
-        <TextBlock HorizontalAlignment="Left" Margin="97,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Century Gothic" Text="КПП"/>
-        <TextBlock HorizontalAlignment="Left" Margin="237,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Century Gothic" Text="Имя директора"/>
-        <TextBlock HorizontalAlignment="Left" Margin="237,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Century Gothic" Text="Телефон"/>
-        <TextBlock HorizontalAlignment="Left" Margin="237,136,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" FontFamily="Century Gothic" />
-        <TextBlock HorizontalAlignment="Left" Margin="400,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Century Gothic" Text="Тип агента"/>
-        <TextBlock HorizontalAlignment="Left" Margin="400,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Century Gothic" Text="Логотип"/>
-        <Image x:Name="playim" HorizontalAlignment="Left" Height="91" Margin="400,116,0,0" VerticalAlignment="Top"  Width="100" 
+        <TextBlock HorizontalAlignment="Left" Margin="97,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Gabriola" Width="120" Text="Наименование" />
+        <TextBlock HorizontalAlignment="Left" Margin="97,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Gabriola"><Run Language="ru-ru" Text="Артикул"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="97,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Gabriola"><Run Language="ru-ru" Text="Минимальная цена"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="240,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Gabriola"><Run Text="Тип "/><Run Language="ru-ru" Text="продукта"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="392,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Gabriola" Text="Логотип"/>
+        <Image x:Name="playim" HorizontalAlignment="Left" Height="91" Margin="392,73,0,0" VerticalAlignment="Top"  Width="100" 
                RenderTransformOrigin="0.84,0.515" />
-        <Button x:Name="ImgBtn" Content="Добавить фото" HorizontalAlignment="Left" Background="#B175EE" FontFamily="Century Gothic" Margin="400,214,0,0" Foreground="#FFE9F9" VerticalAlignment="Top" Width="114" Click="ImgBtn_Click"/>
-        <Button x:Name="DelImgBtn" Content="Удалить фото" HorizontalAlignment="Left" Background="#B175EE" FontFamily="Century Gothic" Margin="400,235,0,0" Foreground="#FFE9F9" VerticalAlignment="Top" Width="114" Click="DelImgBtn_Click"/>
-        <Button x:Name="SaveBtn" Content="Сохранить" HorizontalAlignment="Left" Background="#B175EE" FontFamily="Century Gothic" Margin="170,230,0,0" Foreground="#FFE9F9" VerticalAlignment="Top" Width="114" Click="SaveBtn_Click"/>
-        <Button x:Name="BackBtn" Content="Выйти" HorizontalAlignment="Left" Background="#B175EE" FontFamily="Century Gothic" Margin="170,262,0,0" Foreground="#FFE9F9" VerticalAlignment="Top" Width="114" Click="BackBtn_Click"/>
-        <TextBox x:Name="AddressTB" HorizontalAlignment="Left" Margin="237,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Century Gothic" Background="#B175EE"/>
-        <TextBlock HorizontalAlignment="Left" Margin="237,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Century Gothic" ><Run Language="ru-ru" Text="Адрес"/></TextBlock>
+        <Button x:Name="ImgBtn" Content="Добавить фото" HorizontalAlignment="Left" Background="#00CC76" FontFamily="Gabriola" Margin="392,171,0,0" Foreground="#FFE9F9" 
+                VerticalAlignment="Top" Width="114" Click="ImgBtn_Click"/>
+        <Button x:Name="DelImgBtn" Content="Удалить фото" HorizontalAlignment="Left" Background="#00CC76" FontFamily="Gabriola" Margin="392,0,0,0" Foreground="#FFE9F9" 
+                VerticalAlignment="Center" Width="114" Click="DelImgBtn_Click"/>
+        <Button x:Name="SaveBtn" Content="Сохранить" HorizontalAlignment="Left" Background="#00CC76" FontFamily="Gabriola" Margin="170,230,0,0" Foreground="#FFE9F9" 
+                VerticalAlignment="Top" Width="114" Click="SaveBtn_Click"/>
+        <Button x:Name="BackBtn" Content="Выйти" HorizontalAlignment="Left" Background="#00CC76" FontFamily="Gabriola" Margin="170,262,0,0" Foreground="#FFE9F9" 
+                VerticalAlignment="Top" Width="114" Click="BackBtn_Click"/>
+        <ComboBox x:Name="MaterialCB" HorizontalAlignment="Center" Margin="0,124,0,0" VerticalAlignment="Top" Width="120" Height="18" FontFamily="Gabriola"  Background="#00CC76">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Background="White" Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="240,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Gabriola"><Run Language="ru-ru" Text="Материалы"/></TextBlock>
     </Grid>
 </Window>
