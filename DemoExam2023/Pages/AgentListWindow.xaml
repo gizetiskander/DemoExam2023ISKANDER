@@ -127,7 +127,10 @@
                 <TextBlock Text="По номеру производственного цеха(возрастание)"/>
                 <TextBlock Text="По номеру производственного цеха(убывание)"/>
         </ComboBox>
-        <Button x:Name="AddBtn" Grid.Column="1" Content="Добавить агента" HorizontalAlignment="Left" Background="#00CC76" FontFamily="Gabriola" Margin="45,0,0,0" Grid.Row="2" Foreground="#CEFFF9" VerticalAlignment="Center" Width="114" Click="AddBtn_Click"/>
-        <Button x:Name="UpdateBtn" Content="Обновить" HorizontalAlignment="Left" Background="#00CC76" FontFamily="Gabriola" Margin="310,0,0,0" Grid.Row="2" Foreground="#CEFFF9" VerticalAlignment="Center" Width="114"  Grid.ColumnSpan="2" Click="UpdateBtn_Click"/>
+        <Button x:Name="AddBtn" Grid.Column="1" Content="Добавить агента" HorizontalAlignment="Left" Background="#00CC76" 
+                FontFamily="Gabriola" Margin="45,0,0,0" Grid.Row="2" Foreground="#CEFFF9" VerticalAlignment="Center" Width="114" Click="AddBtn_Click">
+        </Button>
+        <Button x:Name="UpdateBtn" Content="Обновить" HorizontalAlignment="Left" Background="#00CC76" FontFamily="Gabriola" 
+                Margin="310,0,0,0" Grid.Row="2" Foreground="#CEFFF9" VerticalAlignment="Center" Width="114"  Grid.ColumnSpan="2" Click="UpdateBtn_Click"/>
     </Grid>
 </Window>
