@@ -17,28 +17,23 @@ namespace DemoExam2023.db
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Material()
         {
-            this.MaterialCountHistory = new HashSet<MaterialCountHistory>();
-            this.ProductMaterial = new HashSet<ProductMaterial>();
-            this.Supplier = new HashSet<Supplier>();
+            this.MaterialsAndProducts = new HashSet<MaterialsAndProducts>();
+            this.Product = new HashSet<Product>();
         }
     
-        public int ID { get; set; }
-        public string Title { get; set; }
-        public int CountInPack { get; set; }
+        public int id { get; set; }
+        public string Name { get; set; }
+        public int id_Type { get; set; }
+        public Nullable<int> CountPackaged { get; set; }
         public string Unit { get; set; }
-        public Nullable<double> CountInStock { get; set; }
-        public double MinCount { get; set; }
-        public string Description { get; set; }
-        public decimal Cost { get; set; }
-        public string Image { get; set; }
-        public int MaterialTypeID { get; set; }
+        public Nullable<int> CountStocked { get; set; }
+        public Nullable<int> MinimumBalance { get; set; }
+        public Nullable<decimal> Cost { get; set; }
     
-        public virtual MaterialType MaterialType { get; set; }
+        public virtual MaterialProd MaterialProd { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MaterialCountHistory> MaterialCountHistory { get; set; }
+        public virtual ICollection<MaterialsAndProducts> MaterialsAndProducts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductMaterial> ProductMaterial { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Supplier> Supplier { get; set; }
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

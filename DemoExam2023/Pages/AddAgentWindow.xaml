@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemoExam2023.Pages"
         mc:Ignorable="d"
-        Title="AddAgentWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="AddAgentWindow" Height="450" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="14,0,-14,0" RenderTransformOrigin="0.48,0.513">
+       
     </Grid>
 </Window>

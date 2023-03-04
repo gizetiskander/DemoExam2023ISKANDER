@@ -40,32 +40,26 @@
 
                             <StackPanel >
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Agent.AgentType.Title}" FontFamily="Gabriola" Foreground="#00CC76"/>
+                                    <TextBlock Text="{Binding TypeProd.NameType}" FontFamily="Gabriola" FontSize="16" Foreground="#00CC76"/>
                                     <Label Content="|" Foreground="#00CC76"/>
-                                    <TextBlock Text="{Binding Agent.Title}" FontFamily="Gabriola" Foreground="#00CC76"/>
+                                    <TextBlock Text="{Binding Id_Prod}" FontFamily="Gabriola" FontSize="16" Foreground="#00CC76"/>
                                 </StackPanel>
 
 
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Margin="0,5,0,0" Text="{Binding Product.ProductionPersonCount}" FontFamily="Gabriola" Foreground="#00CC76" />
-                                    <Label Content="продаж за год" FontFamily="Gabriola" Foreground="#00CC76"/>
+                                    <Label Content="Материалы:" FontFamily="Gabriola" FontSize="16" Foreground="#00CC76"/>
+                                    <TextBlock Margin="0,5,0,0" Text="{Binding Material.Name}" FontFamily="Gabriola" FontSize="16" Foreground="#00CC76" />
                                 </StackPanel>
 
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Margin="0,5,0,0" Text="{Binding Agent.Phone}" FontFamily="Century Gothic" Foreground="#00CC76"/>
+                                    <TextBlock Margin="0,5,0,0" Text="{Binding Name}" FontFamily="Gabriola" FontSize="16" Foreground="#00CC76"/>
                                 </StackPanel>
-
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="Приоритетность:" FontFamily="Gabriola" Foreground="#00CC76"/>
-                                    <TextBlock Margin="0,5,0,0" Text="{Binding Agent.Priority}" FontFamily="Gabriola" Foreground="#00CC76"/>
-                                </StackPanel>
-
                             </StackPanel>
 
 
 
                             <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5">
-                                <TextBlock Margin="5" HorizontalAlignment="Right"  VerticalAlignment="Top" Text="{Binding Product.MinCostForAgent}" Foreground="#00CC76" FontFamily="Century Gothic"/>
+                                <TextBlock Margin="150,0,50,100" HorizontalAlignment="Right"  VerticalAlignment="Top" FontSize="16" Text="{Binding MinCostForAgent}" Foreground="#00CC76" FontFamily="Gabriola"/>
                             </StackPanel>
 
                         </StackPanel>
@@ -105,7 +99,7 @@
                   MinHeight="20" MinWidth="180" Background="#00CC76" Foreground="#00CC76">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Background="White" x:Name="TypeProd_Name" Text="{Binding Title}"/>
+                    <TextBlock Background="White" x:Name="TypeProd_Name" Text="{Binding NameType}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
 
@@ -116,10 +110,10 @@
                   MinHeight="20" MinWidth="180" Background="#00CC76" Foreground="#00CC76" SelectionChanged="SortCB_SelectionChanged">
                 <TextBlock Text="По наименованию(возрастание)"/>
                 <TextBlock Text="По наименованию(убывание)"/>
-                <TextBlock Text="По размеру скидки(возрастание)"/>
-                <TextBlock Text="По размеру скидки(убывание)"/>
-                <TextBlock Text="По приоритету(возрастание)"/>
-                <TextBlock Text="По приоритету(убывание)"/>
+                <TextBlock Text="По минимальной стоимости(возрастание)"/>
+                <TextBlock Text="По минимальной стоимости(убывание)"/>
+                <TextBlock Text="По номеру производственного цеха(возрастание)"/>
+                <TextBlock Text="По номеру производственного цеха(убывание)"/>
         </ComboBox>
         <Button x:Name="AddBtn" Grid.Column="1" Content="Добавить агента" HorizontalAlignment="Left" Background="#00CC76" FontFamily="Gabriola" Margin="45,0,0,0" Grid.Row="2" Foreground="#CEFFF9" VerticalAlignment="Center" Width="114" Click="AddBtn_Click"/>
         <Button x:Name="UpdateBtn" Content="Обновить" HorizontalAlignment="Left" Background="#00CC76" FontFamily="Gabriola" Margin="310,0,0,0" Grid.Row="2" Foreground="#CEFFF9" VerticalAlignment="Center" Width="114"  Grid.ColumnSpan="2" Click="UpdateBtn_Click"/>

@@ -12,11 +12,11 @@ namespace DemoExam2023.db
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductMaterial
+    public partial class MaterialsAndProducts
     {
-        public int ProductID { get; set; }
-        public int MaterialID { get; set; }
-        public Nullable<double> Count { get; set; }
+        public int Id_Prod { get; set; }
+        public int Id_Material { get; set; }
+        public Nullable<int> RequiredAmountMaterials { get; set; }
     
         public virtual Material Material { get; set; }
         public virtual Product Product { get; set; }

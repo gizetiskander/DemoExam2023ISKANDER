@@ -19,20 +19,18 @@ namespace DemoExam2023.Pages
 
     public partial class AgentListWindow : Window
     {
-        public static MaterialDBEntities dBEntities = new MaterialDBEntities();
-        Agent agent;
+        public static ToiletPaperShop_dbEntities dBEntities = new ToiletPaperShop_dbEntities();
         public AgentListWindow()
         {
             InitializeComponent();
             dBEntities.SaveChanges();
             RefreshComboBox();
             RefreshButtons();
-            agent = new Agent();
-            AgentLst.ItemsSource = dBEntities.ProductSale.ToList();
+            AgentLst.ItemsSource = dBEntities.Product.ToList();
 
-            foreach (var serv in AgentListWindow.dBEntities.AgentType)
+            foreach (var serv in AgentListWindow.dBEntities.TypeProd)
             {
-                FilterCB.ItemsSource = dBEntities.AgentType.ToList();
+                FilterCB.ItemsSource = dBEntities.TypeProd.ToList();
 
             }
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(AgentLst.ItemsSource);
@@ -41,7 +39,7 @@ namespace DemoExam2023.Pages
 
         int pageSize;
         int pageNumber;
-        List<ProductSale> prod1 = dBEntities.ProductSale.ToList();
+        List<Product> prod1 = dBEntities.Product.ToList();
 
         private void RefreshComboBox()
         {
@@ -59,7 +57,7 @@ namespace DemoExam2023.Pages
 
         private void AgentLst_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            var insert = AgentLst.SelectedItem as ProductSale;
+            var insert = AgentLst.SelectedItem as Product;
             InsertAgentWindow insertAgentWindow = new InsertAgentWindow();
             insertAgentWindow.Show();
             this.Close();
@@ -67,17 +65,17 @@ namespace DemoExam2023.Pages
 
         private void SearchTB_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var TBSQ = dBEntities.ProductSale.OrderBy(a => a.Agent.Title).ToList();
-            TBSQ = TBSQ.Where(a => a.Agent.Title.ToLower().Contains(SearchTB.Text.ToLower())).ToList();
+            var TBSQ = dBEntities.Product.OrderBy(a => a.Name).ToList();
+            TBSQ = TBSQ.Where(a => a.Name.ToLower().Contains(SearchTB.Text.ToLower())).ToList();
             AgentLst.ItemsSource = TBSQ;
         }
 
 
         private void FilterCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var typeName = ((AgentType)FilterCB.SelectedItem).Title;
-            var type = AgentListWindow.dBEntities.AgentType.Where(x => x.Title == typeName).FirstOrDefault();
-            AgentLst.ItemsSource = dBEntities.ProductSale.Where(x => x.Agent.AgentType.Title == typeName).ToList();
+            var typeName = ((TypeProd)FilterCB.SelectedItem).NameType;
+            var type = AgentListWindow.dBEntities.TypeProd.Where(x => x.NameType == typeName).FirstOrDefault();
+            AgentLst.ItemsSource = dBEntities.Product.Where(x => x.TypeProd.NameType == typeName).ToList();
 
 
         }
@@ -87,53 +85,53 @@ namespace DemoExam2023.Pages
             if (String.IsNullOrEmpty(SearchTB.Text))
                 return true;
             else
-                return ((item as ProductSale).Agent.Title.IndexOf(SearchTB.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+                return ((item as Product).Name.IndexOf(SearchTB.Text, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
         private void SortCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (SortCB.SelectedIndex == 0)
             {
-                AgentLst.ItemsSource = dBEntities.ProductSale.ToList();
+                AgentLst.ItemsSource = dBEntities.Product.ToList();
                 CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(AgentLst.ItemsSource);
-                view.SortDescriptions.Add(new SortDescription("Agent.Title", ListSortDirection.Ascending));
+                view.SortDescriptions.Add(new SortDescription("Name", ListSortDirection.Ascending));
 
 
             }
             else if (SortCB.SelectedIndex == 1)
             {
-                AgentLst.ItemsSource = dBEntities.ProductSale.ToList();
+                AgentLst.ItemsSource = dBEntities.Product.ToList();
                 CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(AgentLst.ItemsSource);
-                view.SortDescriptions.Add(new SortDescription("Agent.Title", ListSortDirection.Descending));
+                view.SortDescriptions.Add(new SortDescription("Name", ListSortDirection.Descending));
 
 
             }
             else if (SortCB.SelectedIndex == 2)
             {
-                AgentLst.ItemsSource = dBEntities.ProductSale.ToList();
+                AgentLst.ItemsSource = dBEntities.Product.ToList();
                 CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(AgentLst.ItemsSource);
-                view.SortDescriptions.Add(new SortDescription("Product.MinCostForAgent", ListSortDirection.Ascending));
+                view.SortDescriptions.Add(new SortDescription("MinCostForAgent", ListSortDirection.Ascending));
 
             }
             else if (SortCB.SelectedIndex == 3)
             {
-                AgentLst.ItemsSource = dBEntities.ProductSale.ToList();
+                AgentLst.ItemsSource = dBEntities.Product.ToList();
                 CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(AgentLst.ItemsSource);
-                view.SortDescriptions.Add(new SortDescription("Product.MinCostForAgent", ListSortDirection.Descending));
+                view.SortDescriptions.Add(new SortDescription("MinCostForAgent", ListSortDirection.Descending));
 
             }
             else if (SortCB.SelectedIndex == 4)
             {
-                AgentLst.ItemsSource = dBEntities.ProductSale.ToList();
+                AgentLst.ItemsSource = dBEntities.Product.ToList();
                 CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(AgentLst.ItemsSource);
-                view.SortDescriptions.Add(new SortDescription("Agent.Priority", ListSortDirection.Ascending));
+                view.SortDescriptions.Add(new SortDescription("Id_Prod", ListSortDirection.Ascending));
 
             }
             else if (SortCB.SelectedIndex == 5)
             {
-                AgentLst.ItemsSource = dBEntities.ProductSale.ToList();
+                AgentLst.ItemsSource = dBEntities.Product.ToList();
                 CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(AgentLst.ItemsSource);
-                view.SortDescriptions.Add(new SortDescription("Agent.Priority", ListSortDirection.Descending));
+                view.SortDescriptions.Add(new SortDescription("Id_Prod", ListSortDirection.Descending));
 
             }
         }
@@ -148,7 +146,7 @@ namespace DemoExam2023.Pages
 
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)
         {
-            AgentLst.ItemsSource = dBEntities.ProductSale.ToList();
+            AgentLst.ItemsSource = dBEntities.Product.ToList();
 
             SortCB.SelectedItem = null;
             SearchTB.Clear();

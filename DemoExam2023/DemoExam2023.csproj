@@ -88,62 +88,38 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="db\Agent.cs">
-      <DependentUpon>AgentMaterialModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\AgentMaterialModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AgentMaterialModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\AgentMaterialModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AgentMaterialModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\AgentMaterialModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AgentMaterialModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="db\AgentPriorityHistory.cs">
-      <DependentUpon>AgentMaterialModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\AgentType.cs">
-      <DependentUpon>AgentMaterialModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="db\Material.cs">
-      <DependentUpon>AgentMaterialModel.tt</DependentUpon>
+      <DependentUpon>ToiletPaperModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="db\MaterialCountHistory.cs">
-      <DependentUpon>AgentMaterialModel.tt</DependentUpon>
+    <Compile Include="db\MaterialProd.cs">
+      <DependentUpon>ToiletPaperModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="db\MaterialType.cs">
-      <DependentUpon>AgentMaterialModel.tt</DependentUpon>
+    <Compile Include="db\MaterialsAndProducts.cs">
+      <DependentUpon>ToiletPaperModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Product.cs">
-      <DependentUpon>AgentMaterialModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\ProductCostHistory.cs">
-      <DependentUpon>AgentMaterialModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\ProductMaterial.cs">
-      <DependentUpon>AgentMaterialModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\ProductSale.cs">
-      <DependentUpon>AgentMaterialModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\ProductType.cs">
-      <DependentUpon>AgentMaterialModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\Shop.cs">
-      <DependentUpon>AgentMaterialModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db\Supplier.cs">
-      <DependentUpon>AgentMaterialModel.tt</DependentUpon>
+      <DependentUpon>ToiletPaperModel.tt</DependentUpon>
     </Compile>
     <Compile Include="db\sysdiagrams.cs">
-      <DependentUpon>AgentMaterialModel.tt</DependentUpon>
+      <DependentUpon>ToiletPaperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\ToiletPaperModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToiletPaperModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\ToiletPaperModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToiletPaperModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\ToiletPaperModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToiletPaperModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="db\TypeProd.cs">
+      <DependentUpon>ToiletPaperModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Pages\AddAgentWindow.xaml.cs">
       <DependentUpon>AddAgentWindow.xaml</DependentUpon>
@@ -171,12 +147,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="db\AgentMaterialModel.edmx">
+    <EntityDeploy Include="db\ToiletPaperModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AgentMaterialModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>ToiletPaperModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="db\AgentMaterialModel.edmx.diagram">
-      <DependentUpon>AgentMaterialModel.edmx</DependentUpon>
+    <None Include="db\ToiletPaperModel.edmx.diagram">
+      <DependentUpon>ToiletPaperModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -214,22 +190,23 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="db\AgentMaterialModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AgentMaterialModel.Context.cs</LastGenOutput>
-      <DependentUpon>AgentMaterialModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="db\AgentMaterialModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AgentMaterialModel.edmx</DependentUpon>
-      <LastGenOutput>AgentMaterialModel.cs</LastGenOutput>
-    </Content>
     <Resource Include="Res\Logo\picture.png" />
     <Resource Include="Лопушок.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="db\ToiletPaperModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ToiletPaperModel.edmx</DependentUpon>
+      <LastGenOutput>ToiletPaperModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="db\ToiletPaperModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ToiletPaperModel.edmx</DependentUpon>
+      <LastGenOutput>ToiletPaperModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

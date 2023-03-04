@@ -13,10 +13,10 @@ namespace DemoExam2023.db
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MaterialDBEntities : DbContext
+    public partial class ToiletPaperShop_dbEntities : DbContext
     {
-        public MaterialDBEntities()
-            : base("name=MaterialDBEntities")
+        public ToiletPaperShop_dbEntities()
+            : base("name=ToiletPaperShop_dbEntities")
         {
         }
     
@@ -25,19 +25,11 @@ namespace DemoExam2023.db
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Agent> Agent { get; set; }
-        public virtual DbSet<AgentPriorityHistory> AgentPriorityHistory { get; set; }
-        public virtual DbSet<AgentType> AgentType { get; set; }
         public virtual DbSet<Material> Material { get; set; }
-        public virtual DbSet<MaterialCountHistory> MaterialCountHistory { get; set; }
-        public virtual DbSet<MaterialType> MaterialType { get; set; }
+        public virtual DbSet<MaterialProd> MaterialProd { get; set; }
+        public virtual DbSet<MaterialsAndProducts> MaterialsAndProducts { get; set; }
         public virtual DbSet<Product> Product { get; set; }
-        public virtual DbSet<ProductCostHistory> ProductCostHistory { get; set; }
-        public virtual DbSet<ProductMaterial> ProductMaterial { get; set; }
-        public virtual DbSet<ProductSale> ProductSale { get; set; }
-        public virtual DbSet<ProductType> ProductType { get; set; }
-        public virtual DbSet<Shop> Shop { get; set; }
-        public virtual DbSet<Supplier> Supplier { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<TypeProd> TypeProd { get; set; }
     }
 }

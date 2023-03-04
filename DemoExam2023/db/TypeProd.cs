@@ -12,19 +12,18 @@ namespace DemoExam2023.db
     using System;
     using System.Collections.Generic;
     
-    public partial class AgentType
+    public partial class TypeProd
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AgentType()
+        public TypeProd()
         {
-            this.Agent = new HashSet<Agent>();
+            this.Product = new HashSet<Product>();
         }
     
-        public int ID { get; set; }
-        public string Title { get; set; }
-        public string Image { get; set; }
+        public int Id { get; set; }
+        public string NameType { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Agent> Agent { get; set; }
+        public virtual ICollection<Product> Product { get; set; }
     }
 }
